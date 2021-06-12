@@ -1,32 +1,33 @@
-import {AShape} from "~/models/shapes/AShape";
-import {BShape} from "~/models/shapes/BShape";
-import {CShape} from "~/models/shapes/CShape";
-import {DShape} from "~/models/shapes/DShape";
-import {EShape} from "~/models/shapes/EShape";
-import {FShape} from "~/models/shapes/FShape";
-import {GShape} from "~/models/shapes/GShape";
-import {HShape} from "~/models/shapes/HShape";
-import {IShape} from "~/models/shapes/IShape";
-import {JShape} from "~/models/shapes/JShape";
-import {KShape} from "~/models/shapes/KShape";
-import {LShape} from "~/models/shapes/LShape";
-import {MShape} from "~/models/shapes/MShape";
-import {NShape} from "~/models/shapes/NShape";
-import {OShape} from "~/models/shapes/OShape";
-import {PShape} from "~/models/shapes/PShape";
-import {QShape} from "~/models/shapes/QShape";
-import {RShape} from "~/models/shapes/RShape";
-import {SShape} from "~/models/shapes/SShape";
-import {TShape} from "~/models/shapes/TShape";
-import {UShape} from "~/models/shapes/UShape";
-import {VShape} from "~/models/shapes/VShape";
-import {WShape} from "~/models/shapes/WShape";
-import {XShape} from "~/models/shapes/XShape";
-import {YShape} from "~/models/shapes/YShape";
-import {ZShape} from "~/models/shapes/ZShape";
+import {AShape} from "~/models/shapes/letters/AShape";
+import {BShape} from "~/models/shapes/letters/BShape";
+import {CShape} from "~/models/shapes/letters/CShape";
+import {DShape} from "~/models/shapes/letters/DShape";
+import {EShape} from "~/models/shapes/letters/EShape";
+import {FShape} from "~/models/shapes/letters/FShape";
+import {GShape} from "~/models/shapes/letters/GShape";
+import {HShape} from "~/models/shapes/letters/HShape";
+import {IShape} from "~/models/shapes/letters/IShape";
+import {JShape} from "~/models/shapes/letters/JShape";
+import {KShape} from "~/models/shapes/letters/KShape";
+import {LShape} from "~/models/shapes/letters/LShape";
+import {MShape} from "~/models/shapes/letters/MShape";
+import {NShape} from "~/models/shapes/letters/NShape";
+import {OShape} from "~/models/shapes/letters/OShape";
+import {PShape} from "~/models/shapes/letters/PShape";
+import {QShape} from "~/models/shapes/letters/QShape";
+import {RShape} from "~/models/shapes/letters/RShape";
+import {SShape} from "~/models/shapes/letters/SShape";
+import {TShape} from "~/models/shapes/letters/TShape";
+import {UShape} from "~/models/shapes/letters/UShape";
+import {VShape} from "~/models/shapes/letters/VShape";
+import {WShape} from "~/models/shapes/letters/WShape";
+import {XShape} from "~/models/shapes/letters/XShape";
+import {YShape} from "~/models/shapes/letters/YShape";
+import {ZShape} from "~/models/shapes/letters/ZShape";
 
 enum SHAPE_CATEGORY {
   LETTERS = 'Letters',
+  SHAPES = 'Shapes',
 }
 
 
