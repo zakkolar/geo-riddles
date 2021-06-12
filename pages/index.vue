@@ -55,6 +55,7 @@
 </template>
 
 <script lang="ts">
+// @ts-nocheck
 import Vue from 'vue'
 import {SHAPES} from "~/models/Shapes";
 import {Renderer} from "~/models/Renderer";
@@ -64,12 +65,12 @@ import {Transformation} from "~/models/Transformation";
 
 export default Vue.extend({
   data() : {
-    renderer: Renderer,
+    renderer: Renderer | null,
     shapes: typeof SHAPES,
     transformations: typeof TRANSFORMATIONS,
     chosenTransformationKeys: String[],
     currentSteps: String[],
-    currentShapeKey: string,
+    currentShapeKey: string | null,
   } {
     return {
       shapes: SHAPES,
@@ -82,6 +83,7 @@ export default Vue.extend({
   },
   mounted() {
     const c = document.getElementById('preview');
+    // @ts-ignore
     this.renderer = new Renderer(c, {scale: 5});
     this.resetCanvas();
 
@@ -93,13 +95,17 @@ export default Vue.extend({
         return [NO_TRANSFORMATION];
       }
       else{
+        // @ts-ignore
         return this.transformations
+          // @ts-ignore
           .filter(item => this.chosenTransformationKeys.indexOf(item.label) > -1)
+          // @ts-ignore
           .map(item => item.transformation);
       }
     },
 
     currentShape(){
+      // @ts-ignore
       const shape = this.shapes.find(shape => shape.label == this.currentShapeKey);
       if(shape){
         return shape.shape;
@@ -108,10 +114,12 @@ export default Vue.extend({
     },
 
     showRegenerate(){
+      // @ts-ignore
       return this.currentTransformations.length > 1 || this.currentTransformations[0] !== NO_TRANSFORMATION;
     },
 
     shapeCategories(){
+      // @ts-ignore
       return this.shapes.map(item => item.category).filter((value, index, self) => self.indexOf(value) === index);
     }
   },
@@ -134,7 +142,9 @@ export default Vue.extend({
       }
     },
     resetCanvas(){
+      // @ts-ignore
       this.renderer.penUp();
+      // @ts-ignore
       this.renderer.clear();
     },
     renderPreview(){
