@@ -24,6 +24,13 @@ import {WShape} from "~/models/shapes/letters/WShape";
 import {XShape} from "~/models/shapes/letters/XShape";
 import {YShape} from "~/models/shapes/letters/YShape";
 import {ZShape} from "~/models/shapes/letters/ZShape";
+import {FlagShape} from "~/models/shapes/FlagShape";
+import {TriangleShape} from "~/models/shapes/TriangleShape";
+import {RectangleShape} from "~/models/shapes/RectangleShape";
+import {TrapezoidShape} from "~/models/shapes/TrapezoidShape";
+import {SquareShape} from "~/models/shapes/SquareShape";
+import {HexagonShape} from "~/models/shapes/HexagonShape";
+import {HeartShape} from "~/models/shapes/HeartShape";
 
 enum SHAPE_CATEGORY {
   LETTERS = 'Letters',
@@ -32,6 +39,47 @@ enum SHAPE_CATEGORY {
 
 
 export const SHAPES = [
+
+  // SHAPES
+  {
+    label: "Triangle",
+    shape: new TriangleShape(),
+    category: SHAPE_CATEGORY.SHAPES,
+  },
+  {
+    label: "Square",
+    shape: new SquareShape(),
+    category: SHAPE_CATEGORY.SHAPES,
+  },
+  {
+    label: "Hexagon",
+    shape: new HexagonShape(),
+    category: SHAPE_CATEGORY.SHAPES
+  },
+  {
+    label: "Rectangle",
+    shape: new RectangleShape(),
+    category: SHAPE_CATEGORY.SHAPES,
+  },
+  {
+    label: "Trapezoid",
+    shape: new TrapezoidShape(),
+    category: SHAPE_CATEGORY.SHAPES,
+  },
+  {
+    label: "Heart",
+    shape: new HeartShape(),
+    category: SHAPE_CATEGORY.SHAPES,
+  },
+  {
+    label: "Flag",
+    shape: new FlagShape(),
+    category: SHAPE_CATEGORY.SHAPES,
+  },
+
+
+  // LETTERS
+
   {
     label: "A",
     shape: new AShape(),
@@ -161,6 +209,6 @@ export const SHAPES = [
     label: "Z",
     shape: new ZShape(),
     category: SHAPE_CATEGORY.LETTERS
-  }
+  },
 
 ]

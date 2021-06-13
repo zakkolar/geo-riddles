@@ -13,6 +13,17 @@
             </option>
           </optgroup>
         </select>
+        <h3 class="mt3">Shape Sources</h3>
+        <ul class="mt3 list ml0 pl0">
+          <li class="mt2" v-for="source in shapeSources">
+            {{source.name}}
+            <ul class="list pl4">
+              <li v-for="link in source.links" class="mt1">
+                <a :href="link.url" target="_blank">{{link.text}}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
 
       <div class="w-33-l w-100 pa2 fl">
@@ -71,6 +82,7 @@ export default Vue.extend({
     chosenTransformationKeys: String[],
     currentSteps: String[],
     currentShapeKey: string | null,
+    shapeSources: []
   } {
     return {
       shapes: SHAPES,
@@ -78,7 +90,40 @@ export default Vue.extend({
       chosenTransformationKeys: [],
       renderer: null,
       currentSteps: [],
-      currentShapeKey: null
+      currentShapeKey: null,
+      shapeSources: [
+        {
+          name: 'iRobot',
+          links: [
+            {
+              url: 'https://edu.irobot.com/learning-library/ice-skate-shapes',
+              text: 'Root - Ice Skate Shapes'
+            },
+            {
+              url: 'https://shop.edu.irobot.com/blogs/stories/root-alphabet-guide',
+              text: 'Root Alphabet Guide'
+            }
+          ]
+
+        },
+        {
+          name: 'Heidi MacGregor',
+          links: [
+            {
+              url: 'https://docs.google.com/presentation/d/1hB0rm63zTsxP8HFe8TcEdT6IbGJEcKLZkratZtRoCE4/edit#slide=id.gad514305c7_0_24',
+              text: 'GeoRiddles 1'
+            },
+            {
+              url: 'https://docs.google.com/presentation/d/1cwEnqvj2BHCvo3T0IDmbqe1Y_QgQY2ZckWH7aihynxg/edit#slide=id.gad9e89dbdd_0_56',
+              text: 'More GeoRiddles'
+            },
+            {
+              url: 'https://docs.google.com/presentation/d/1iLwJAtFU2XUDUFym61fDVqK3m-sYiN_loPqj10ik4F4/edit#slide=id.ga57901608d_0_5',
+              text: 'Level 2 GeoRiddles'
+            }
+          ]
+        }
+      ]
     }
   },
   mounted() {
