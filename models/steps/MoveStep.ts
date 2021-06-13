@@ -15,7 +15,7 @@ export class MoveStep extends Step {
     return this._distance;
   }
 
-  generateText(transformation: Transformation): String {
+  transformText(transformation: Transformation): String {
     return `Move by ${transformation.transform(this.distance)}`;
   }
 

@@ -7,7 +7,8 @@ import {Transformation} from "~/models/Transformation";
 export enum STEP_TYPES {
   ROTATE = 'ROTATE',
   PEN = 'PEN',
-  MOVE = 'MOVE'
+  MOVE = 'MOVE',
+  REPEAT = 'REPEAT'
 };
 
 /**
@@ -28,11 +29,24 @@ export abstract class Step {
     return this._type;
   }
 
-  /**
-   * Represents the Step as a human-readable instruction
-   * @return {String} Human-readable instruction
-   */
-  abstract generateText(transformation: Transformation): String;
+  static chooseTransformation(transformation: Transformation | Transformation[]): Transformation {
+    let thisTransformation = transformation;
+
+    if(Array.isArray(thisTransformation)){
+      // @ts-ignore
+      thisTransformation = transformation[Math.floor(Math.random() * 1000) % thisTransformation.length]
+    }
+
+    // @ts-ignore
+    return thisTransformation;
+  }
+
+  generateText(transformation: Transformation | Transformation[]): String {
+   const thisTransformation = Step.chooseTransformation(transformation);
+    return this.transformText(thisTransformation);
+  }
+
+  abstract transformText(transformation: Transformation): String;
 
   abstract render(renderer: Renderer): void;
 

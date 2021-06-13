@@ -31,6 +31,7 @@ import {TrapezoidShape} from "~/models/shapes/TrapezoidShape";
 import {SquareShape} from "~/models/shapes/SquareShape";
 import {HexagonShape} from "~/models/shapes/HexagonShape";
 import {HeartShape} from "~/models/shapes/HeartShape";
+import {TriangleRepeatShape} from "~/models/shapes/TriangleRepeatShape";
 
 enum SHAPE_CATEGORY {
   LETTERS = 'Letters',

@@ -1,6 +1,7 @@
 import {Step} from "~/models/Step";
 import {Renderer} from "./Renderer";
 import {Transformation} from "~/models/Transformation";
+import {RepeatStep} from "~/models/steps/RepeatStep";
 
 export abstract class Shape {
   _steps: Step[];
@@ -33,19 +34,25 @@ export abstract class Shape {
     return this._startAngle;
   }
 
+  numSteps():number{
+    let num = 0;
+    for(let step of this.steps){
+      if(step instanceof  RepeatStep){
+        num+= step.numSteps();
+      }
+      else{
+        num++;
+      }
+    }
+    return num;
+  }
+
   generateStepList(transformation: Transformation | Transformation[]): String[] {
     const steps = [];
     for(let step of this.steps){
 
-      let thisTransformation = transformation;
-
-      if(Array.isArray(thisTransformation)){
-        // @ts-ignore
-        thisTransformation = transformation[Math.floor(Math.random() * 1000) % thisTransformation.length]
-      }
-
       // @ts-ignore
-      steps.push(step.generateText(thisTransformation));
+      steps.push(step.generateText(transformation));
     }
     return steps;
   }

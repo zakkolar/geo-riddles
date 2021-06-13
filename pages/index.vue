@@ -9,7 +9,7 @@
         <select v-model="currentShapeKey">
           <optgroup v-for="category of shapeCategories" :label="category">
             <option v-for="shape of shapes.filter(item => item.category === category)" :value="shape.label">
-              {{shape.label}} ({{shape.shape.steps.length}} steps)
+              {{shape.label}} ({{shape.shape.numSteps()}} steps)
             </option>
           </optgroup>
         </select>
@@ -52,9 +52,7 @@
       <div class="w-50-l w-100 center pa2" v-if="currentSteps.length">
         <h2 class="subtitle">Clues</h2>
         <ol>
-          <li v-for="step of currentSteps">
-            {{step}}
-          </li>
+          <li v-for="step of currentSteps" v-html="step"></li>
         </ol>
 
         <button v-if="showRegenerate" @click.prevent = "generateSteps">Regenerate</button>

@@ -3,6 +3,8 @@ import {PenDownStep} from "~/models/steps/PenDownStep";
 import {PenUpStep} from "~/models/steps/PenUpStep";
 import {MoveStep} from "~/models/steps/MoveStep";
 import {RotateLeftStep} from "~/models/steps/RotateLeftStep";
+import {Step} from "~/models/Step";
+import {RepeatStep} from "~/models/steps/RepeatStep";
 
 /**
  * Shortcut to create a new PenUpStep
@@ -45,4 +47,8 @@ export function left(angle: number): RotateLeftStep {
  */
 export function right(angle: number): RotateRightStep {
     return new RotateRightStep(angle);
+}
+
+export function repeat(times: number, steps: Step[]): RepeatStep {
+  return new RepeatStep(times, steps);
 }

@@ -19,7 +19,7 @@ export abstract class Pen extends Step {
     return this._direction;
   }
 
-  generateText(transform: Transformation): String {
+  transformText(transform: Transformation): String {
     return `Marker ${this.direction}`
   }
 
