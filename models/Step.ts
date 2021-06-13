@@ -17,7 +17,7 @@ export enum STEP_TYPES {
 export abstract class Step {
   private readonly _type: STEP_TYPES;
 
-  constructor(type:STEP_TYPES){
+  protected constructor(type:STEP_TYPES){
     this._type = type;
   }
 

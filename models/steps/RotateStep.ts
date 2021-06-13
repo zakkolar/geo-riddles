@@ -11,7 +11,7 @@ export abstract class RotateStep extends Step {
   private readonly _direction: ROTATION;
   private readonly _angle: number;
 
-  constructor(direction: ROTATION, angle: number){
+  protected constructor(direction: ROTATION, angle: number){
     super(STEP_TYPES.ROTATE);
     this._direction = direction;
     this._angle = angle;

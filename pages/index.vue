@@ -68,9 +68,7 @@
 import Vue from 'vue'
 import {SHAPES} from "~/models/Shapes";
 import {Renderer} from "~/models/Renderer";
-import {Shape} from "~/models/Shape";
 import {NO_TRANSFORMATION, TRANSFORMATIONS} from "~/models/Transformations";
-import {Transformation} from "~/models/Transformation";
 
 export default Vue.extend({
   data() : {

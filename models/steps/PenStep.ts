@@ -10,7 +10,7 @@ export abstract class Pen extends Step {
 
   private readonly _direction;
 
-  constructor(direction: PenStep) {
+  protected constructor(direction: PenStep) {
     super(STEP_TYPES.PEN);
     this._direction = direction;
   }

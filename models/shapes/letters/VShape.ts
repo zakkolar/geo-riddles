@@ -1,5 +1,5 @@
 import {Shape} from "~/models/Shape";
-import {move, penDown, left, right} from "~/helpers/StepFactories";
+import {move, penDown, left} from "~/helpers/StepFactories";
 
 export class VShape extends Shape {
   constructor() {

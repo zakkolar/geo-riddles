@@ -1,5 +1,5 @@
 import {Shape} from "~/models/Shape";
-import {move, penDown, left, right, penUp} from "~/helpers/StepFactories";
+import {move, penDown, right, penUp} from "~/helpers/StepFactories";
 
 export class EShape extends Shape {
   constructor() {
