@@ -3,8 +3,7 @@ import {move, penDown, left, right, penUp} from "~/helpers/StepFactories";
 
 export class QShape extends Shape {
   constructor() {
-    super(15, 30, 90);
-    this._steps = [
+    super(15, 30, 90, [
       penDown(),
       move(20),
       right(90),
@@ -23,6 +22,6 @@ export class QShape extends Shape {
       penDown(),
       right(45),
       move(8),
-    ]
+    ]);
   }
 }

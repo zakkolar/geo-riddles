@@ -10,12 +10,11 @@ export abstract class Shape {
   private readonly _startY: number;
   private readonly _startAngle: number;
 
-  protected constructor(startX: number, startY: number, startAngle: number){
+  protected constructor(startX: number, startY: number, startAngle: number, steps: Step[]){
     this._startX = startX;
     this._startY = startY;
     this._startAngle = startAngle;
-
-    this._steps = [];
+    this._steps = steps;
   }
 
   get steps(){

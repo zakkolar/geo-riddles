@@ -3,8 +3,7 @@ import {move, penDown, left, right} from "~/helpers/StepFactories";
 
 export class JShape extends Shape {
   constructor() {
-    super(15, 22, -90);
-    this._steps = [
+    super(15, 22, -90,  [
       penDown(),
       move(8),
       left(90),
@@ -15,6 +14,6 @@ export class JShape extends Shape {
       move(8),
       right(180),
       move(16)
-    ]
+    ]);
   }
 }

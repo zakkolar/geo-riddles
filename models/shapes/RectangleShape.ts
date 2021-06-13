@@ -3,8 +3,7 @@ import {move, penDown, left, right} from "~/helpers/StepFactories";
 
 export class RectangleShape extends Shape {
   constructor() {
-    super(17, 10, 0);
-    this._steps = [
+    super(17, 10, 0, [
       penDown(),
       move(8),
       right(90),
@@ -13,6 +12,6 @@ export class RectangleShape extends Shape {
       move(8),
       right(90),
       move(16)
-    ]
+    ]);
   }
 }

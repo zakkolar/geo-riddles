@@ -1,10 +1,9 @@
 import {Shape} from "~/models/Shape";
-import {move, penDown, left, right} from "~/helpers/StepFactories";
+import {move, penDown, right} from "~/helpers/StepFactories";
 
 export class OShape extends Shape {
   constructor() {
-    super(15, 30, 90);
-    this._steps = [
+    super(15, 30, 90, [
       penDown(),
       move(20),
       right(90),
@@ -13,6 +12,6 @@ export class OShape extends Shape {
       move(20),
       right(90),
       move(12),
-    ]
+    ]);
   }
 }

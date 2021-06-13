@@ -3,8 +3,7 @@ import {move, penDown, left, right} from "~/helpers/StepFactories";
 
 export class AShape extends Shape {
   constructor() {
-    super(15, 30, 90);
-    this._steps = [
+    super(15, 30, 90, [
       penDown(),
       move(16),
       right(45),
@@ -17,6 +16,6 @@ export class AShape extends Shape {
       move(8),
       left(90),
       move(12)
-    ]
+    ]);
   }
 }
