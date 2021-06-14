@@ -1,27 +1,27 @@
 import {Shape} from "~/models/Shape";
-import {move, penDown, right, penUp} from "~/helpers/StepFactories";
+import {forward, penDown, right, penUp} from "~/helpers/StepFactories";
 
 export class QShape extends Shape {
   constructor() {
     super(15, 30, 90, [
       penDown(),
-      move(20),
+      forward(20),
       right(90),
-      move(12),
+      forward(12),
       right(90),
-      move(14),
+      forward(14),
       right(30),
-      move(8),
+      forward(8),
       right(60),
-      move(8),
+      forward(8),
       right(90),
-      move(7),
+      forward(7),
       right(90),
       penUp(),
-      move(7),
+      forward(7),
       penDown(),
       right(45),
-      move(8),
+      forward(8),
     ]);
   }
 }

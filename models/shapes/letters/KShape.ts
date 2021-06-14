@@ -1,19 +1,19 @@
 import {Shape} from "~/models/Shape";
-import {move, penDown, left, right} from "~/helpers/StepFactories";
+import {forward, penDown, left, right} from "~/helpers/StepFactories";
 
 export class KShape extends Shape {
   constructor() {
     super(15, 30, 90, [
       penDown(),
-      move(20),
+      forward(20),
       right(180),
-      move(8),
+      forward(8),
       left(135),
-      move(11),
+      forward(11),
       right(180),
-      move(11),
+      forward(11),
       left(80),
-      move(15)
+      forward(15)
     ]);
   }
 }

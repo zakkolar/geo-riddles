@@ -1,7 +1,7 @@
 import {RotateRightStep} from "~/models/steps/RotateRightStep";
 import {PenDownStep} from "~/models/steps/PenDownStep";
 import {PenUpStep} from "~/models/steps/PenUpStep";
-import {MoveStep} from "~/models/steps/MoveStep";
+import {MoveForwardStep} from "~/models/steps/MoveForwardStep";
 import {RotateLeftStep} from "~/models/steps/RotateLeftStep";
 import {Step} from "~/models/Step";
 import {RepeatStep} from "~/models/steps/RepeatStep";
@@ -23,12 +23,12 @@ export function penDown(): PenDownStep {
 }
 
 /**
- * Shortcut to create a new MoveStep
+ * Shortcut to create a new MoveForwardStep
  * @param {number} distance - The distance moved in this step
- * @return {MoveStep} Newly created MoveStep
+ * @return {MoveForwardStep} Newly created MoveForwardStep
  */
-export function move(distance: number): MoveStep {
-    return new MoveStep(distance);
+export function forward(distance: number): MoveForwardStep {
+    return new MoveForwardStep(distance);
 }
 
 /**

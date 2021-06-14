@@ -72,6 +72,14 @@ export class Renderer {
 
     }
 
+    forward(distance: number): void {
+      this.move(distance);
+    }
+
+    backward(distance: number): void {
+      this.move(distance * -1);
+    }
+
     goTo(x: number, y: number): void{
       this.updatePosition(x, y);
     }

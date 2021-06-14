@@ -2,12 +2,19 @@ import {Step, STEP_TYPES} from "~/models/Step";
 import {Renderer} from "../Renderer";
 import {Transformation} from "~/models/Transformation";
 
-export class MoveStep extends Step {
+export enum MOVE_DIRECTION {
+  FORWARD = 'forward',
+  BACKWARD = 'backward'
+}
+
+export abstract class MoveStep extends Step {
 
   private readonly _distance:number;
+  private readonly _direction: MOVE_DIRECTION;
 
-  constructor(distance: number) {
+  protected constructor(direction: MOVE_DIRECTION, distance: number) {
       super(STEP_TYPES.MOVE);
+      this._direction = direction;
       this._distance = distance;
   }
 
@@ -15,12 +22,14 @@ export class MoveStep extends Step {
     return this._distance;
   }
 
-  transformText(transformation: Transformation): String {
-    return `Move by ${transformation.transform(this.distance)}`;
+  get direction(){
+    return this._direction;
   }
 
-  render(renderer: Renderer): void {
-    renderer.move(this.distance);
+  transformText(transformation: Transformation): String {
+    return `Move ${this.direction} by ${transformation.transform(this.distance)}`;
   }
+
+
 
 }

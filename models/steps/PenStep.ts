@@ -1,16 +1,16 @@
 import {Step, STEP_TYPES} from "~/models/Step";
 import {Transformation} from "~/models/Transformation";
 
-export enum PenStep {
+export enum PEN_DIRECTION {
   UP = 'up',
   DOWN = 'down'
 }
 
-export abstract class Pen extends Step {
+export abstract class PenStep extends Step {
 
   private readonly _direction;
 
-  protected constructor(direction: PenStep) {
+  protected constructor(direction: PEN_DIRECTION) {
     super(STEP_TYPES.PEN);
     this._direction = direction;
   }

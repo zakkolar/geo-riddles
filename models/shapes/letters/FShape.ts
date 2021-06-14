@@ -1,19 +1,19 @@
 import {Shape} from "~/models/Shape";
-import {move, penDown, right, penUp} from "~/helpers/StepFactories";
+import {forward, penDown, right, penUp} from "~/helpers/StepFactories";
 
 export class FShape extends Shape {
   constructor() {
     super(15, 30, 90, [
       penDown(),
-      move(20),
+      forward(20),
       right(90),
-      move(8),
+      forward(8),
       right(90),
       penUp(),
-      move(10),
+      forward(10),
       penDown(),
       right(90),
-      move(8)
+      forward(8)
 
     ]);
   }

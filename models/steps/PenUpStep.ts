@@ -1,9 +1,9 @@
-import {PenStep, Pen} from "~/models/steps/PenStep";
+import {PEN_DIRECTION, PenStep} from "~/models/steps/PenStep";
 import {Renderer} from "../Renderer";
 
-export class PenUpStep extends Pen {
+export class PenUpStep extends PenStep {
   constructor(){
-    super(PenStep.UP);
+    super(PEN_DIRECTION.UP);
   }
 
   render(renderer: Renderer): void {

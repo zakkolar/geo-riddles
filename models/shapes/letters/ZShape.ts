@@ -1,15 +1,15 @@
 import {Shape} from "~/models/Shape";
-import {move, penDown, left, right} from "~/helpers/StepFactories";
+import {forward, penDown, left, right} from "~/helpers/StepFactories";
 
 export class ZShape extends Shape {
   constructor() {
     super(15, 10, 0, [
       penDown(),
-      move(12),
+      forward(12),
       right(125),
-      move(24),
+      forward(24),
       left(125),
-      move(12)
+      forward(12)
     ]);
   }
 }

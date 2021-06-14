@@ -1,19 +1,19 @@
 import {Shape} from "~/models/Shape";
-import {move, penDown, left, right} from "~/helpers/StepFactories";
+import {forward, penDown, left, right} from "~/helpers/StepFactories";
 
 export class JShape extends Shape {
   constructor() {
     super(15, 22, -90,  [
       penDown(),
-      move(8),
+      forward(8),
       left(90),
-      move(8),
+      forward(8),
       left(90),
-      move(20),
+      forward(20),
       right(90),
-      move(8),
+      forward(8),
       right(180),
-      move(16)
+      forward(16)
     ]);
   }
 }

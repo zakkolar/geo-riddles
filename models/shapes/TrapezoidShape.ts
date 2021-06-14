@@ -1,18 +1,18 @@
 import {Shape} from "~/models/Shape";
-import {move, penDown, right} from "~/helpers/StepFactories";
+import {forward, penDown, right} from "~/helpers/StepFactories";
 
 export class TrapezoidShape extends Shape {
   constructor() {
     super(5, 20, 90, [
       penDown(),
       right(45),
-      move(16),
+      forward(16),
       right(45),
-      move(8),
+      forward(8),
       right(45),
-      move(16),
+      forward(16),
       right(135),
-      move(32),
+      forward(32),
     ]);
   }
 }
