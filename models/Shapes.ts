@@ -31,6 +31,9 @@ import {TrapezoidShape} from "~/models/shapes/TrapezoidShape";
 import {SquareShape} from "~/models/shapes/SquareShape";
 import {HexagonShape} from "~/models/shapes/HexagonShape";
 import {HeartShape} from "~/models/shapes/HeartShape";
+import {HexagonRepeatShape} from "~/models/shapes/HexagonRepeatShape";
+import {SquareRepeatShape} from "~/models/shapes/SquareRepeatShape";
+import {TriangleRepeatShape} from "~/models/shapes/TriangleRepeatShape";
 
 enum SHAPE_CATEGORY {
   LETTERS = 'Letters',
@@ -47,13 +50,28 @@ export const SHAPES = [
     category: SHAPE_CATEGORY.SHAPES,
   },
   {
+    label: "Triangle - with repeats",
+    shape: new TriangleRepeatShape(),
+    category: SHAPE_CATEGORY.SHAPES,
+  },
+  {
     label: "Square",
     shape: new SquareShape(),
     category: SHAPE_CATEGORY.SHAPES,
   },
   {
+    label: "Square - with repeats",
+    shape: new SquareRepeatShape(),
+    category: SHAPE_CATEGORY.SHAPES,
+  },
+  {
     label: "Hexagon",
     shape: new HexagonShape(),
+    category: SHAPE_CATEGORY.SHAPES
+  },
+  {
+    label: "Hexagon - with repeats",
+    shape: new HexagonRepeatShape(),
     category: SHAPE_CATEGORY.SHAPES
   },
   {

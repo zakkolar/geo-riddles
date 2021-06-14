@@ -36,7 +36,8 @@ export class RepeatStep extends Step {
   }
 
   transformText(transformation: Transformation): String {
-    return `Repeat the following steps ${transformation.transform(this.times)} times`;
+    const stepsWord = this.steps.length > 1 ? 'steps' : 'step';
+    return `Repeat the following ${stepsWord} ${transformation.transform(this.times)} times:`;
   }
 
   render(renderer: Renderer): void {
