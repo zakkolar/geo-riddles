@@ -1,9 +1,9 @@
-/**
- * List of defined step types
- */
 import {Renderer} from "./Renderer";
 import {Transformation} from "~/models/Transformation";
 
+/**
+ * List of defined step types
+ */
 export enum STEP_TYPES {
   ROTATE = 'ROTATE',
   PEN = 'PEN',
@@ -41,6 +41,11 @@ export abstract class Step {
     return thisTransformation;
   }
 
+  /**
+   * Generates a string that describes the Step in words, including a transformation that turns key numbers into math problems.
+   * @param transformation The Transformation to apply to the number(s) in Step. If a list is provided, one is chosen randomly each time the text is generated.
+   * @return Description of the Step in words.
+   */
   generateText(transformation: Transformation | Transformation[]): String {
    const thisTransformation = Step.chooseTransformation(transformation);
     return this.transformText(thisTransformation);
