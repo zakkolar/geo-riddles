@@ -21,6 +21,8 @@ export class MultiplicationTransformation extends Transformation {
 
     let increaseFactor = 0;
 
+    const maxIterations = d === 1 ? 4 : 3;
+
     do {
       let transformationsToTest = [], smallFactorsToTest = [];
 
@@ -50,7 +52,7 @@ export class MultiplicationTransformation extends Transformation {
         }
       }
 
-      // sort smallFactorsToTest randomly using Fisher-Yates shuffle
+
       for(let i = smallFactorsToTest.length - 1; i > 0; i--){
         let j = Math.floor(Math.random() * (i + 1));
         [smallFactorsToTest[i], smallFactorsToTest[j]] = [smallFactorsToTest[j], smallFactorsToTest[i]];
@@ -61,7 +63,7 @@ export class MultiplicationTransformation extends Transformation {
 
 
     }
-    while(!transformation && ++increaseFactor < 4);
+    while(!transformation && ++increaseFactor < maxIterations);
 
 
     if(transformation) {

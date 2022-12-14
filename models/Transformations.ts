@@ -6,6 +6,8 @@ import {Addition5DigitTransformation} from "~/models/transformations/Addition5Di
 import {Multiplication1by3Transformation} from "~/models/transformations/Multiplication1by3Transformation";
 import {Multiplication1by2Transformation} from "~/models/transformations/Multiplication1by2Transformation";
 import {Multiplication1by4Transformation} from "~/models/transformations/Multiplication1by4Transformation";
+import {Multiplication2by2Transformation} from "~/models/transformations/Multiplication2by2Transformation";
+import {Multiplication2by3Transformation} from "~/models/transformations/Multiplication2by3Transformation";
 
 export const NO_TRANSFORMATION = new NoTransformation();
 
@@ -41,5 +43,13 @@ export const TRANSFORMATIONS = [
   {
     label: 'Multiplication 1 by 4',
     transformation: new Multiplication1by4Transformation()
+  },
+  {
+    label: 'Multiplication 2 by 2',
+    transformation: new Multiplication2by2Transformation()
+  },
+  {
+    label: 'Multiplication 2 by 3',
+    transformation: new Multiplication2by3Transformation()
   }
   ]

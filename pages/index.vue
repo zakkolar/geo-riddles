@@ -2,9 +2,9 @@
   <div>
     <h1 class="title tc">GeoRiddle Generator</h1>
 
-    <div class="mw9 center">
+    <div class="mw9 center dt">
 
-      <div class="w-33-l w-100 pa2 fl">
+      <div class="w-25-l w-100 pa2 dtc-l">
         <h2 class="subtitle">Shape</h2>
         <select v-model="currentShapeKey">
           <optgroup v-for="category of shapeCategories" :label="category">
@@ -26,7 +26,7 @@
         </ul>
       </div>
 
-      <div class="w-33-l w-100 pa2 fl">
+      <div class="w-25-l w-100 pa2 dtc-l">
         <h2 class="subtitle">Transformations</h2>
         <div v-for="item of transformations" class="flex items-center mb2">
         <label class="lh-copy" >
@@ -38,10 +38,10 @@
 
 
 
-      <div class="fl w-100 pa2 w-33-l">
+      <div class=" w-100 pa2 w-25-l dtc-l">
 
         <h2 class="subtitle">Preview</h2>
-        <canvas id="preview" width="200" height="200" style="border-style:solid; border-width:1px;">
+        <canvas class="center tc" id="preview" width="200" height="200" style="border-style:solid; border-width:1px;">
 
         </canvas>
       </div>
@@ -49,7 +49,7 @@
 
 
 
-      <div class="w-50-l w-100 center pa2" v-if="currentSteps.length">
+      <div class="w-25-l w-100 center pa2 dtc-l" v-if="currentSteps.length">
         <h2 class="subtitle">Clues</h2>
         <ol>
           <li v-for="step of currentSteps" v-html="step"></li>
