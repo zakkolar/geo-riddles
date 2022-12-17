@@ -19,8 +19,7 @@ export class MultiplicationTransformation extends Transformation {
 
     let increaseFactor = 0;
 
-    const maxIterations = d === 1 ? 4 : 3;
-
+    const maxIterations = d === 1 ? 5 : 3;
 
 
     let foundNumber = false;
