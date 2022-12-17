@@ -1,5 +1,6 @@
 import {Transformation} from "~/models/Transformation";
 import {addCommas} from "~/helpers/MathHelpers";
+import {ForLoopRandomStart} from "~/helpers/ForLoopRandomStart";
 
 export class MultiplicationTransformation extends Transformation {
   // performance lags when smaller number of digits is higher than 3
@@ -11,66 +12,56 @@ export class MultiplicationTransformation extends Transformation {
     this.digits = [digits1, digits2].sort();
   }
 
-  transform(number: number): string {
-
+  findTransformationFactors(number: number) {
     let [d, D] = this.digits;
 
-    let transformedNumber;
-
-    let transformation = null;
+    let transformation:any = null;
 
     let increaseFactor = 0;
 
     const maxIterations = d === 1 ? 4 : 3;
 
-    do {
-      let transformationsToTest = [], smallFactorsToTest = [];
 
+
+    let foundNumber = false;
+
+    do {
       let increase = Math.pow(10, d * increaseFactor);
 
-      transformedNumber = number * increase;
+      let transformedNumber = number * increase;
 
-      for(let i = 0; i < increase; i++) {
-        transformationsToTest.push(transformedNumber + i);
-      }
+      ForLoopRandomStart(Math.pow(10, d - 1 ), Math.pow(10, d ), 1, smallFactor => {
+        ForLoopRandomStart(0, increase, 1, i => {
+          let product = transformedNumber + i;
+          const largeFactor = product / smallFactor;
 
-
-
-      for(let i = Math.pow(10, d - 1 ); i < Math.pow(10, d ); i++){
-        for(let transformation of transformationsToTest){
-
-          const smallFactor = i;
-          const largeFactor = transformation / smallFactor;
-
-          if(transformation % i === 0 && largeFactor > 1 && smallFactor > 1){
-            smallFactorsToTest.push({
-              transformation,
+          if(product % smallFactor === 0 && largeFactor > 1 && smallFactor > 1 && largeFactor.toString().length === D){
+            transformation = {
+              product,
               smallFactor,
               largeFactor
-            });
+            };
+            foundNumber = true;
+            return false;
           }
+        })
+        if(foundNumber) {
+          return false;
         }
-      }
-
-
-      for(let i = smallFactorsToTest.length - 1; i > 0; i--){
-        let j = Math.floor(Math.random() * (i + 1));
-        [smallFactorsToTest[i], smallFactorsToTest[j]] = [smallFactorsToTest[j], smallFactorsToTest[i]];
-      }
-
-
-      transformation = smallFactorsToTest.find(smallFactor => smallFactor.largeFactor.toString().length === D );
-
-
+      })
     }
     while(!transformation && ++increaseFactor < maxIterations);
 
+    return transformation;
+  }
+
+  transform(number: number): string {
+    const transformation = this.findTransformationFactors(number);
 
     if(transformation) {
+      const transformText = `${addCommas(transformation.smallFactor)} x ${addCommas(transformation.largeFactor)}`;
 
-      const transformText = `${transformation.smallFactor} x ${transformation.largeFactor}`;
-
-      if(transformation.transformation === number){
+      if(transformation.product === number){
         return transformText;
       }
       else {
