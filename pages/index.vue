@@ -51,11 +51,12 @@
 
       <div class="w-25-l w-100 center pa2 dtc-l" v-if="currentSteps.length">
         <h2 class="subtitle">Clues</h2>
+        <button v-if="showRegenerate" @click.prevent = "generateSteps">Regenerate</button>
         <ol>
           <li v-for="step of currentSteps" v-html="step"></li>
         </ol>
 
-        <button v-if="showRegenerate" @click.prevent = "generateSteps">Regenerate</button>
+
       </div>
     </div>
 
