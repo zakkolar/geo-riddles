@@ -1,20 +1,3 @@
-# geo-riddles
+# GeoRiddles
 
-## Build Setup
-
-```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+This [website](https://georiddles.techlit.app/) allows educators to generate a sequence of steps for students to program robots to draw various letters and shapes. Educators can optionally specify types of math problems for students to solve in order to reveal each step.
