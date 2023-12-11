@@ -67,7 +67,7 @@ export class MultiplicationTransformation extends Transformation {
         const numDigits = number.toString().length;
         const digitLabel = numDigits > 1 ? `${numDigits} digits` : `digit`;
 
-        return `the first ${digitLabel} of ${transformText}`;
+        return `the <b>first ${digitLabel}</b> of ${transformText}`;
       }
 
     }

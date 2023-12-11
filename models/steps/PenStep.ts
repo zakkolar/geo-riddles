@@ -20,7 +20,7 @@ export abstract class PenStep extends Step {
   }
 
   transformText(transform: Transformation): String {
-    return `Marker ${this.direction}`
+    return `Marker <b>${this.direction}</b>`
   }
 
 }

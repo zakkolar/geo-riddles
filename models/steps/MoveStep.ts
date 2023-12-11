@@ -52,7 +52,7 @@ export abstract class MoveStep extends Step {
   }
 
   transformText(transformation: Transformation): String {
-    return `Move ${this.direction} by ${transformation.transform(this.distance)}`;
+    return `<b>Move ${this.direction}</b> by ${transformation.transform(this.distance)}`;
   }
 
 

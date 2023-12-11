@@ -26,7 +26,7 @@ export abstract class RotateStep extends Step {
   }
 
   transformText(transformation: Transformation): String {
-    return `Turn ${this.direction} by ${transformation.transform(this.angle)}`;
+    return `<b>Turn ${this.direction}</b> by ${transformation.transform(this.angle)}`;
   }
 
 }

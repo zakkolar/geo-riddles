@@ -48,7 +48,7 @@ export abstract class AdditionTransformation extends Transformation {
 
     if(solution !== number){
       const digits = originalNumberLength > 1 ? `${originalNumberLength} digits` : `digit`;
-      puzzleString = `the ${numberPosition} ${digits} of`;
+      puzzleString = `the <b>${numberPosition} ${digits}</b> of`;
     }
 
     puzzleString = `${puzzleString} ${addCommas(num1)} + ${addCommas(num2)}`;
