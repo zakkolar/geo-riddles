@@ -58,7 +58,7 @@ export class MultiplicationTransformation extends Transformation {
     const transformation = this.findTransformationFactors(number);
 
     if(transformation) {
-      const transformText = `${addCommas(transformation.smallFactor)} x ${addCommas(transformation.largeFactor)}`;
+      const transformText = `${addCommas(transformation.smallFactor)} × ${addCommas(transformation.largeFactor)}`;
 
       if(transformation.product === number){
         return transformText;
