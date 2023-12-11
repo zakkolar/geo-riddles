@@ -34,6 +34,8 @@ import {HeartShape} from "~/models/shapes/HeartShape";
 import {HexagonRepeatShape} from "~/models/shapes/HexagonRepeatShape";
 import {SquareRepeatShape} from "~/models/shapes/SquareRepeatShape";
 import {TriangleRepeatShape} from "~/models/shapes/TriangleRepeatShape";
+import {ExclamationDoubleShape} from "~/models/shapes/letters/ExclamationDoubleShape";
+import {ExclamationSingleShape} from "~/models/shapes/letters/ExclamationSingleShape";
 
 enum SHAPE_CATEGORY {
   LETTERS = 'Letters',
@@ -228,5 +230,15 @@ export const SHAPES = [
     shape: new ZShape(),
     category: SHAPE_CATEGORY.LETTERS
   },
+  {
+    label: "!",
+    shape: new ExclamationSingleShape(),
+    category: SHAPE_CATEGORY.LETTERS
+  },
+  {
+    label: "!!",
+    shape: new ExclamationDoubleShape(),
+    category: SHAPE_CATEGORY.LETTERS
+  }
 
 ]
